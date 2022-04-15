@@ -1,0 +1,13 @@
+<div class="ui comments">
+  <div class="comment">
+    <div class="content">
+      <a class="author"><%= message.user.username %></a>
+      <div class="metadata">
+        <span class="date"><%= time_ago_in_words(message.created_at) %> ago</span>
+      </div>
+      <div class="text">
+        <%= message.body %>
+      </div>
+    </div>
+  </div>
+</div>

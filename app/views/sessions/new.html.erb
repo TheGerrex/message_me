@@ -1,31 +1,31 @@
-<div class="ui container">
-  <div class="ui relaxed grid middle aligned center aligned full-height">
+<div class="ui text container">
+  <div class="ui relaxed grid middle aligned center aligned" style="padding-top: 20px;">
     <div class="column">
       <h2 class="ui center aligned header">
         <div class="content">
           Log in to your account
         </div>
       </h2>
-      <form class="ui form">
+      <%= form_for(:session, html: {class: "ui form", role: "form"}, url: login_path) do |form| %>
         <div class="ui raised very padding segment">
           <div class="field">
+            <%= form.label :username %>
             <div class="ui left icon input">
               <i class="user icon"></i>
-              <input type="text" name="email" placeholder="E-mail address" autocomplete="off">
+              <%= form.text_field :username, placeholder: "Enter your username" %>
             </div>
           </div>
           <div class="field">
+            <%= form.label :password %>
             <div class="ui left icon input">
               <i class="lock icon"></i>
-              <input type="password" name="password" placeholder="Password" autocomplete="off">
+              <%= form.password_field :password, placeholder: "Enter your password" %>
             </div>
           </div>
-          <div class="ui fluid primary submit button">Login</div>
+          <%= form.button "Login", class: "ui fluid primary submit button"%>
         </div>
-
-        <div class="ui error message"></div>
-
-      </form>
+      <% end %>
+      
 
       <div class="ui small message">
         New to us?  <a href="#">Sign Up</a>

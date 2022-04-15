@@ -8,47 +8,25 @@
     <div class="ui fluid raised card chatbox">
       <div class="content">
         <div class="ui comments">
-          <% @messages.each do |message| %>
-            <div class="comment">
-              <a class="avatar">
-                <div class="circle-avatar">
-                  <i class="large black user icon"></i>
-                </div>
-              </a>
-              <div class="content">
-                <div class="author">
-                  <%= message.user.username%>
-                  <div class="metadata">
-                    <span class="date">
-                      <%= time_ago_in_words(message.created_at) %> ago
-                    </span>
-                  </div>
-                </div>
-                <div class="text">
-                  <%= message.body%>
-                </div>
-              </div>
-            </div>
-          <% end %>
+          <%= render @messages %>
         </div>
       </div>
       <div class="extra content">
-          <form class="ui reply form">
-            <div class="field">
-              <div class="ui fluid icon input">
-                <input type="text" placeholder="Enter a message...">
-                <i class="bordered inverted red paper plane icon"></i>
-              </div>
+        <%= form_for(@message, html: { class: "ui reply form", role: "form"}, url: message_path) do |f| %>
+          <div class="field">
+            <div class="ui fluid icon input">
+              <%= f.text_field :body, placeholder: "Enter a message..." %>
+              <%= f.button '<i class="bordered inverted red paper plane icon"></i>'.html_safe %>
             </div>
-          </form>
-        </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 
   <div class="four wide column">
-    <div class="ui fluid raised card chatbox">
-      <div class="content">
-        <div class="ui inverted vertical menu">
+  
+        <div class="ui vertical menu">
           <a class="active item">
             Home
           </a>
@@ -58,8 +36,7 @@
           <a class="item">
             Friends
           </a>
-        </div>
-      </div>
+ 
     </div>
   </div>
 
