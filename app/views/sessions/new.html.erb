@@ -1,2 +1,35 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="ui container">
+  <div class="ui relaxed grid middle aligned center aligned full-height">
+    <div class="column">
+      <h2 class="ui center aligned header">
+        <div class="content">
+          Log in to your account
+        </div>
+      </h2>
+      <form class="ui form">
+        <div class="ui raised very padding segment">
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input type="text" name="email" placeholder="E-mail address" autocomplete="off">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="password" placeholder="Password" autocomplete="off">
+            </div>
+          </div>
+          <div class="ui fluid primary submit button">Login</div>
+        </div>
+
+        <div class="ui error message"></div>
+
+      </form>
+
+      <div class="ui small message">
+        New to us?  <a href="#">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>
