@@ -1,3 +1,17 @@
 // Place all the styles related to the chatroom controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.circle-avatar {
+  background-color: rgb(247, 247, 247);
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .large.black.user.icon {
+    margin: 0px !important;
+  }
+}
