@@ -6,13 +6,13 @@
 <div class="ui two colum grid">
   <div class="twelve wide column">
     <div class="ui fluid raised card chatbox">
-      <div class="content">
-        <div class="ui comments">
+      <div class="content" id="messages">
+        <div class="ui comments" id="message-container">
           <%= render @messages %>
         </div>
       </div>
-      <div class="extra content">
-        <%= form_for(@message, html: { class: "ui reply form", role: "form"}, url: message_path) do |f| %>
+      <div class="extra content" style= "min-height: 5em !important;">
+        <%= form_for(@message, html: { class: "ui reply form", role: "form"}, url: message_path, remote: true) do |f| %>
           <div class="field">
             <div class="ui fluid icon input">
               <%= f.text_field :body, placeholder: "Enter a message..." %>
@@ -25,7 +25,6 @@
   </div>
 
   <div class="four wide column">
-  
         <div class="ui vertical menu">
           <a class="active item">
             Home
@@ -36,7 +35,6 @@
           <a class="item">
             Friends
           </a>
- 
     </div>
   </div>
 

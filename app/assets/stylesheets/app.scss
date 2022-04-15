@@ -1,8 +1,23 @@
 @import '@doabit/semantic-ui-sass/src/scss/semantic-ui.scss';
 
 .chatbox {
-  height: 450px;
+  height: 65vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
+
+#messages {
+  overflow: scroll;
+  height: 15em;
+}
+
+// .overflow-scroll {
+//   overflow: scroll;
+
+// }
 
 .full-height {
   height: 95vh;
